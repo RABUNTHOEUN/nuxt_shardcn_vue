@@ -8,10 +8,15 @@ import {
   Command,
   Frame,
   GalleryVerticalEnd,
+  Grid2X2,
+  LayoutDashboard,
   Map,
+  MenuSquare,
   PieChart,
   Settings2,
   SquareTerminal,
+  User,
+  User2,
 } from "lucide-vue-next"
 import NavMain from '@/components/NavMain.vue'
 import NavProjects from '@/components/NavProjects.vue'
@@ -158,6 +163,18 @@ const data = {
       icon: Map,
     },
   ],
+  myNav: [
+    {
+      name: "Dashboard",
+      url: "/dashboard",
+      icon: LayoutDashboard,
+    },
+    {
+      name: "Users",
+      url: "dashboard/users",
+      icon: User,
+    },
+  ],
 }
 </script>
 
@@ -167,8 +184,9 @@ const data = {
       <TeamSwitcher :teams="data.teams" />
     </SidebarHeader>
     <SidebarContent>
-      <NavMain :items="data.navMain" />
-      <NavProjects :projects="data.projects" />
+      <!-- <NavMain :items="data.navMain" /> -->
+      <!-- <NavProjects :projects="data.projects" /> -->
+       <NavProjects :projects="data.myNav"/>
     </SidebarContent>
     <SidebarFooter>
       <NavUser :user="data.user" />
